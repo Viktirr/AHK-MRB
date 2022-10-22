@@ -1,4 +1,4 @@
-# AHK_MRB
+# AHK-MRB
 AutoHotkey - Multiple Replay Buffers for OBS
 
 Tutorial how to set it up:

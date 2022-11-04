@@ -1,5 +1,6 @@
 # AHK-MRB
-AutoHotkey - Multiple Replay Buffers for OBS
+AutoHotkey - Multiple Replay Buffers for OBS  
+This script is meant to save you some time during editing by saving only the amount of video you think is necessary on the fly, or to upload the clips directly to YouTube or any other platform.  
 
 ## Usage  
 Saving videos is simple, the default controls include:

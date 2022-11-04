@@ -53,6 +53,7 @@ My recommendation is to create a folder named ffmpeg inside Documents and paste 
 - Open OBS
 - Open Settings
 - Head over to Output and then Recording
+- On Recording Format select .mkv
 - On Recording Path click Browse
 - Select the temporary folder for saving your replays (mandatory)
 - Apply changes

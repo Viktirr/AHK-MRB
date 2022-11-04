@@ -67,4 +67,4 @@ My recommendation is to create a folder named ffmpeg inside Documents and paste 
 If you've done everything right, you should be good to go!
 
 ## Additional configuration  
-If you want to customise your script even further, click on this [YouTube Video](https://www.youtube.com/watch?v=QQHP5CUg7WM) explaining how to change the amount of replay buffers, changing hotkeys and some additional options you may also change.
+If you want to customise your script even further, click on this [YouTube Video](https://www.youtube.com/watch?v=QQHP5CUg7WM) explaining how to change the amount of replay buffers, changing hotkeys, compressing videos further with x264 or x265, and some additional options you may also change.

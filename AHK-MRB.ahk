@@ -45,7 +45,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 
 ; Customisable options:
 ; Files
-SetWorkingDir C:\Users\%A_UserName%\Documents        ; Change this to the directory where you have ffmpeg located. (untested yet, if you're having issues set ffmpeg as environment variable)
+SetWorkingDir C:\Users\%A_UserName%\Documents        ; Change this to the directory where you have FFmpeg located.
 TemporaryDirectory = D:\Videos\Temporary            	     ; Change this to your temporary videos folder, you want to put the same folder as what's set up on OBS. BE CAREFUL: Selecting a folder with files in it WILL DELETE ALL OF THEM! I'm not responsible for this!
 FinalDirectory = D:\Videos                             ; Your Videos folder that you wish to save the videos to.
 
@@ -61,10 +61,10 @@ global x264SecondsThreshold := 0    ; Same as x265SecondsThreshold but for x264
 global x264Quality := 21            ; Set this to your OBS CRF setting. Default: 21
 
 ; Audio
-; If you're using DaVinci Resolve you may want to use the libopus audio codec and change the bitrate to 64k or 96k, it should reduce the file size by a bit.
+; If you're using DaVinci Resolve you may want to use aac instead of libopus, as libopus audio is choppy within DaVinci Resolve, and will affect your final render.
 ; More information here: https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
-global audioCodec = "libopus"       ; Which audio codec to use? (Recommended values are: libopus, libvorbis, aac and copy (copy just copies the audio codec used in the video without processing it again) Default: "aac"
-global audioBitrate = "96k"         ; Select audio bitrate. (Recommended values are: 64k for libopus, 160k for aac) Default: "160k"
+global audioCodec = "aac"       ; Which audio codec to use? (Recommended values are: libopus, libvorbis, aac and copy (copy just copies the audio codec used in the video without processing it again) Default: "aac"
+global audioBitrate = "160k"         ; Select audio bitrate. (Recommended values are: 64k for libopus, 160k for aac) Default: "160k"
 
 ; UX (User Experience)
 ; The default options are recommended with disabled notification banners for AutoHotkey on system settings. You should also add AutoHotkey to priority on Focus Assist so you can hear the notifications while gaming. If you want to keep noise to a minimum, disable enableNotifications.

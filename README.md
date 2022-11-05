@@ -1,6 +1,6 @@
 # AHK-MRB
 AutoHotkey - Multiple Replay Buffers for OBS  
-This script is meant to save you some time during editing by saving only the amount of video you think is necessary on the fly, or to upload the clips directly to YouTube or any other platform.  
+This script is meant to save you some time during editing by only saving the amount of time you think is necessary for a clip, on the fly. You could also use it to upload the clips directly to YouTube or any other platform without wasting your time trimming it out.  
 
 ## Usage  
 Saving videos is simple, the default controls include:
@@ -24,19 +24,19 @@ Upon exiting OBS, or force saving, your clips will be trimmed to the last amount
 Download: https://www.autohotkey.com/
 - FFmpeg Binaries (essential or full)  
 Download: https://www.gyan.dev/ffmpeg/builds/
-- The Script Itself  
+- The Script Itself (AHK-MRB.ahk)  
 Download: https://github.com/Viktirr/AHK-MRB/releases  
 
 ### Installation process
 #### The script
 It doesn't matter where the script or any of its dependencies are (for now).  
-If you'd like the script to start up while booting into Windows, then head over to...  
+If you'd like the script to start as soon as Windows is done booting, head over to...  
 ```
 %AppData%\Microsoft\Windows\Start Menu\Programs\
 ```  
-and paste the script (AHK-MRB.ahk) there.
+...and paste the script (AHK-MRB.ahk) there.
 #### FFmpeg
-There is also no restriction for FFmpeg's file location, just as long as it doesn't require administrator rights to run, any place should be fine.  
+There is no restriction for FFmpeg's location either, just as long as it doesn't require administrator rights to run, any place should be fine.  
 My recommendation is to create a folder named ffmpeg inside Documents and paste ffmpeg.exe there  
 1. Open the downloaded .7z file that contains FFmpeg
 2. Head over to the bin folder inside the .7z file
@@ -68,4 +68,4 @@ My recommendation is to create a folder named ffmpeg inside Documents and paste 
 If you've done everything right, you should be good to go!
 
 ## Additional configuration  
-If you want to customise your script even further, click on this [YouTube Video](https://www.youtube.com/watch?v=QQHP5CUg7WM) explaining how to change the amount of replay buffers, changing hotkeys, compressing videos further with x264 or x265, and some additional options you may also change.
+If you want to customise your script even further, click on this [YouTube Video](https://www.youtube.com/watch?v=QQHP5CUg7WM) explaining how to change the amount of replay buffers, change the hotkeys, compress videos further with x264 or x265, and tweak some additional options you may also change.

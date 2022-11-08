@@ -1,6 +1,7 @@
 # AHK-MRB
 AutoHotkey - Multiple Replay Buffers for OBS  
-This script is meant to save you some time during editing by only saving the amount of time you think is necessary for a clip, on the fly. You could also use it to upload the clips directly to YouTube or any other platform without wasting your time trimming it out.  
+  
+This script is meant to save you some time during editing by only saving the amount of time you think is necessary for a clip, on the fly. You could also use it to upload the clips directly to YouTube or any other platform without wasting time trimming it out.  
 
 ## Usage  
 Saving videos is simple, the default controls include:
@@ -29,8 +30,8 @@ Download: https://github.com/Viktirr/AHK-MRB/releases
 
 ### Installation process
 #### The script
-It doesn't matter where the script or any of its dependencies are (for now).  
-If you'd like the script to start as soon as Windows is done booting, head over to...  
+You can save the script pretty much wherever you like,
+if you'd like the script to start as soon as Windows is done booting, head over to...  
 ```
 %AppData%\Microsoft\Windows\Start Menu\Programs\
 ```  
@@ -43,29 +44,32 @@ My recommendation is to create a folder named ffmpeg inside Documents and paste 
 3. Drag and drop ffmpeg.exe to the folder you created (or create the folder now)
 4. Delete the .7z file  
 #### Setting up the script  
-- Create 2 new folders, one where the video will be temporarily stored, and the other where the final videos will be stored (the temporary folder can be nested inside the final one)
+- Create 2 new folders, one where the video will be temporarily stored, and the other where the final videos will be stored (the temporary folder can be nested inside the final one, the naming of the folders are up to your choosing).
 - Open the script with a text editor (Notepad, Notepad++, VS Code...)  
-- Set SetWorkingDir to the folder you created with ffmpeg on (if you can't find this variable, use Ctrl + F)
+- Set SetWorkingDir to the folder where ffmpeg is located (if you can't find SetWorkingDir, use Ctrl + F)
 - Set TemporaryDirectory to the temporary folder you just created
 - Set FinalDirectory to the final folder you just created
 - Save the script and exit
 #### Setting up OBS
-- Open OBS
-- Open Settings
-- Head over to Output and then Recording
-- On Recording Format select .mkv
-- On Recording Path click Browse
-- Select the temporary folder for saving your replays (mandatory)
-- Apply changes
-- Head over to Replay Buffer under Output as well
+Please note that all of these steps are mandatory for the script to work properly.
+##### Set Recording Format to .mkv
+- Open OBS -> Settings -> Output -> Recording
+- Select .mkv under Recording Format
+##### Select your Temporary Folder
+- OBS -> Settings -> Output -> Recording
+- Under Recording Path click Browse
+- Select the temporary folder for saving your replays
+##### Enable & Configure Replay Buffer
+- OBS -> Settings -> Output -> Replay Buffer
 - Enable the Replay Buffer
-- Set the Replay Buffer to 300 seconds. (mandatory)
-- Head over to Hotkeys
-- Replace Save Replay with Alt + F10 (mandatory)
-- Replace Start/Stop Recording with Alt + F11 (mandatory)
+- Set the Replay Buffer to 300 seconds
+##### Match Script Hotkeys with OBS
+- OBS -> Settings -> Hotkeys
+- Replace Save Replay with Alt + F10
+- Replace Start/Stop Recording with Alt + F11
 - Apply changes
   
-If you've done everything right, you should be good to go!
+If you've done everything as described, you should be good to go!
 
 ## Additional configuration  
-If you want to customise your script even further, click on this [YouTube Video](https://www.youtube.com/watch?v=QQHP5CUg7WM) explaining how to change the amount of replay buffers, change the hotkeys, compress videos further with x264 or x265, and tweak some additional options you may also change.
+If you want to customise your script even further, this [YouTube Video](https://www.youtube.com/watch?v=QQHP5CUg7WM) explains how to change the amount of replay buffers, change the hotkeys, compress videos further with x264 or x265, and tweak some additional options you may also like to change.

@@ -33,7 +33,7 @@ Download: https://github.com/Viktirr/AHK-MRB/releases
 You can save the script pretty much wherever you like,
 if you'd like the script to start as soon as Windows is done booting, head over to...  
 ```
-%AppData%\Microsoft\Windows\Start Menu\Programs\
+%AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 ```  
 ...and paste the script (AHK-MRB.ahk) there.
 #### FFmpeg

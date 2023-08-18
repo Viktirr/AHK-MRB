@@ -1,7 +1,5 @@
 ﻿; Make a new .ahk file, paste the following and save
 
-; This script is made to work with AutoHotkey v2 and hopefully onwards.
-
 SendMode "Input"  ; Recommended for new scripts due to its superior speed and reliability.
 
 ; CHANGE your OBS keybinds/settings to:
@@ -46,9 +44,9 @@ SendMode "Input"  ; Recommended for new scripts due to its superior speed and re
 
 ; Customisable options:
 ; Files
-SetWorkingDir "E:\Apps\ffmpeg"                                    ; Change this to the directory where you have FFmpeg located.
-global TemporaryDirectory := "D:\Videos\Temporary"                ; Change this to your temporary videos folder, you want to put the same folder as what's set up on OBS. BE CAREFUL: Selecting a folder with files in it WILL DELETE ALL OF THEM! I'm not responsible for this!
-global FinalDirectory := "D:\Videos"                              ; Your Videos folder that you wish to save the videos to.
+SetWorkingDir "F:\Apps\ffmpeg"                                    ; Change this to the directory where you have FFmpeg located.
+global TemporaryDirectory := "F:\Videos\Temporary"                ; Change this to your temporary videos folder, you want to put the same folder as what's set up on OBS. BE CAREFUL: Selecting a folder with files in it WILL DELETE ALL OF THEM! I'm not responsible for this!
+global FinalDirectory := "F:\Videos"                              ; Your Videos folder that you wish to save the videos to.
 
 
 ; Video
@@ -70,7 +68,7 @@ global x264Quality := 21            ; Set this to your OBS CRF setting. Default:
 ; Audio
 ; If you're using DaVinci Resolve you may want to use aac instead of libopus, as libopus audio is choppy within DaVinci Resolve, and will affect your final render.
 ; More information here: https://trac.ffmpeg.org/wiki/Encode/HighQualityAudio
-global audioCodec := "aac"          ; Which audio codec to use? (Recommended values are: libopus, libvorbis, aac and copy (copy just copies the audio codec used in the video without processing it again) Default: "aac"
+global audioCodec := "copy"          ; Which audio codec to use? (Recommended values are: libopus, libvorbis, aac and copy (copy just copies the audio codec used in the video without processing it again) Default: "copy"
 global audioBitrate := "160k"       ; Select audio bitrate. (Recommended values are: 64k for libopus, 160k for aac) Default: "160k"
 
 ; UX (User Experience)
@@ -109,6 +107,7 @@ currentApp := ""
 nextLineProcess := false
 nextLineSeconds := false
 global forceSave := 0
+global replaySeconds := 0
 
 while true 
 {
@@ -348,12 +347,12 @@ saveReplay()
 {
     Sleep 33
     Send "{Alt down}{F10 Down}"
-    Sleep 1000
+    Sleep 800
     Send "{Alt up}{F10 up}"
 }
 
 ; folderChanged(20) saves a replay that's going to last 20 seconds. So if you want it to save for 15 seconds you would change it to: folderChanged(15)
-;
+
 ; If any of the hotkeys overlap with OBS you may want to use ~$ this prefix in front of the hotkey and remove saveReplay(). Check example for ~$!F10::
 
 !F2:: ; Save replay for 8 seconds.
@@ -442,7 +441,7 @@ folderChanged(300)
 {
 if (recordingstarted = true)
 {
-    recordingstarted := false
+    global recordingstarted := false
     if (soundNotifications = true)
     {
         SoundPlay "*64"
@@ -455,7 +454,7 @@ if (recordingstarted = true)
 }
 else if (obsrunning = true)
 {
-    recordingstarted := true
+    global recordingstarted := true
     recordingdelay := true
     Sleep 7000
     folderChanged()
@@ -494,10 +493,14 @@ checkProcessDB()
 	{
         case "csgo.exe":
 			return "Counter Strike Global Offensive"
+        case "DyingLightGame.exe":
+            return "Dying Light"
         case "FortniteClient-Win64-Shipping.exe":
 			return "Fortnite"
         case "ForzaHorizon5.exe":
 			return "Forza Horizon 5"
+        case "gta_sa.exe":
+            return "Grand Theft Auto San Andreas"
         case "GTAIV.exe":
             return "Grand Theft Auto IV"
 		case "gta5.exe":
@@ -524,6 +527,8 @@ checkProcessDB()
 			return "VALORANT"
         case "aces.exe":
             return "War Thunder"
+        case "WorldOfTanks.exe":
+            return "World of Tanks"
 		default:
 			return "nothing"
 	}
@@ -532,3 +537,5 @@ checkProcessDB()
 
 ^Esc::reload
 ^l::ExitApp
+
+; Ver.: 18-08-2023

@@ -21,7 +21,7 @@ Upon exiting OBS, or force saving, your clips will be trimmed to the last amount
 ## Installation
 ### Prerequisites
 - Windows 10/11
-- AutoHotkey  
+- AutoHotkey v2.0  
 Download: https://www.autohotkey.com/
 - FFmpeg Binaries (essential or full)  
 Download: https://www.gyan.dev/ffmpeg/builds/

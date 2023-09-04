@@ -488,7 +488,14 @@ checkProcessDB()
 	; Change "Program" to a folder name you want
 	; Then paste it in switch currentWindow
 
-	currentWindow := WinGetProcessName("A")
+    ; Try-Catch removes a useless error
+    try {
+        currentWindow := WinGetProcessName("A")
+    }
+    catch {
+        currentWindow := " "
+    }
+
 	switch currentWindow
 	{
         case "csgo.exe":
@@ -538,4 +545,4 @@ checkProcessDB()
 ^Esc::reload
 ^l::ExitApp
 
-; Ver.: 18-08-2023
+; Ver.: 04-09-2023
